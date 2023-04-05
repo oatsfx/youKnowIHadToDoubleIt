@@ -3,7 +3,7 @@ import './App.css';
 
 const flavorTexts = [
   "double (dou-ble), verb: become twice as much or as many",
-  "created from the coping mechanism of: double it and give it to the next person",
+  "created from the coping mechanism: double it and give it to the next person",
   "you know i had to double ittttt",
   "created from non-smelly code"
 ];
@@ -12,6 +12,8 @@ const stringIndex = Math.floor(Math.random() * flavorTexts.length);
 
 function App(){
   const [double, setDouble] = useState(0);
+
+  document.title = `you know i had to double it`;
 
   return (
     <div className="app">
