@@ -36,6 +36,15 @@ html{
   font-family: Comic Sans;
 }
 
+.double-container{
+  transition: all 0.15s ease-in;
+}
+
+.active{
+  color: #7dd8c0;
+  text-shadow: #7dd8c0 0px 0px 5px 0.5;
+}
+
 .head{
   margin-bottom: 1.5rem;
   align-items: center;

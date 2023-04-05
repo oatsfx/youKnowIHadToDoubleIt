@@ -34,7 +34,7 @@ function App(){
         <em>{flavorTexts[stringIndex]}</em>
       </div>
       <div className="body">
-        <p>Times doubled: {double}</p>
+        <p>Times doubled: {Math.pow(2, double)}</p>
         {
           double > 10 ? <em>The website will start to lag. If you can load the site still, congrats.</em> : <></>
         }
