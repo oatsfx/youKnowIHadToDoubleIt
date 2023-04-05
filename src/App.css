@@ -1,0 +1,85 @@
+@font-face { font-family: Neue Haas Grotesk Display; src: url("fonts/NeueHaasDisplayRoman.ttf"); }
+@font-face { font-family: Comic Sans; src: url("fonts/comic.ttf"); }
+
+
+:root{
+  --font-display: "Neue Haas Grotesk Display";
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* VARIABLES */
+  font-family: var(--font-display);
+}
+
+html{
+  background-color: #141414;
+}
+
+.app {
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #141414;
+  color: #f2fffe;
+  align-items: center;
+}
+
+.comic-sans{
+  font-family: Comic Sans;
+}
+
+.head{
+  margin-bottom: 1.5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.head em{
+  letter-spacing: 0.35px;
+}
+
+.body{
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.button{
+  height: 3rem;
+  margin: auto;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  max-width: 12rem;
+  display: flex;
+  
+  overflow: hidden;
+  outline: 1px solid #fff5;
+  background-color: #fff1;
+
+  user-select: none;
+
+  text-align: center;
+  align-items: center;
+
+  transition: all 0.2s cubic-bezier(0.275, 0.485, 0, 1);
+}
+
+.button h2{
+  text-align: center;
+  margin: auto;
+}
+
+.button:hover {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  background-color: #fff4;
+}
