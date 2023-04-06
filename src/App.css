@@ -21,17 +21,17 @@
 
 html{
   background-color: #141414;
+  color: var(--main-color);
 }
 
 .app {
-  padding: 2rem;
+  padding: 1rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #141414;
-  color: var(--main-color);
+  
   align-items: center;
 }
 
@@ -50,6 +50,7 @@ html{
 
 .head{
   margin-bottom: 1.5rem;
+  margin-top: 2rem;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -92,7 +93,7 @@ a:active {
 }
 
 .button{
-  height: 3rem;
+  height: 2.5rem;
   margin: auto;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -122,4 +123,36 @@ a:active {
   outline: 3px solid #fff;
   outline-offset: 2px;
   background-color: #fff4;
+  cursor: pointer;
+}
+
+.search {
+  background: #1f2123;
+  max-width: 13rem;
+  min-width: 13rem;
+  align-items: center;
+  margin: auto;
+
+  outline: 1px solid #fff5;
+  
+  transition: all 0.2s cubic-bezier(0.275, 0.485, 0, 1);
+}
+
+.search:hover {
+  outline: 3px solid #fff;
+}
+
+.search input{
+  flex: 1;
+  background: none;
+  color: #f2fffe;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  margin: auto;
+
+  text-align: center;
+
+  border: none;
+  outline: none;
 }
