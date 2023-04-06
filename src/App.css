@@ -4,6 +4,9 @@
 
 :root{
   --font-display: "Neue Haas Grotesk Display";
+
+  --main-color: #f2fffe;
+  --active-color: #7dd8c0;
 }
 
 * {
@@ -28,7 +31,7 @@ html{
   align-items: center;
   flex-direction: column;
   background-color: #141414;
-  color: #f2fffe;
+  color: var(--main-color);
   align-items: center;
 }
 
@@ -41,8 +44,8 @@ html{
 }
 
 .active{
-  color: #7dd8c0;
-  text-shadow: #7dd8c0 0px 0px 5px 0.5;
+  color: var(--active-color);
+  text-shadow: var(--active-color) 0px 0px 5px 0.5;
 }
 
 .head{
@@ -62,6 +65,32 @@ html{
   justify-content: center;
 }
 
+.navbar {
+  display: flex;
+  max-width: 50%;
+  margin: auto;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+a:active {
+  text-decoration: none;
+  color: var(--active-color);
+}
+
 .button{
   height: 3rem;
   margin: auto;
@@ -69,6 +98,8 @@ html{
   margin-bottom: 0.75rem;
   max-width: 12rem;
   display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
   
   overflow: hidden;
   outline: 1px solid #fff5;
@@ -82,7 +113,7 @@ html{
   transition: all 0.2s cubic-bezier(0.275, 0.485, 0, 1);
 }
 
-.button h2{
+.button h2, a{
   text-align: center;
   margin: auto;
 }

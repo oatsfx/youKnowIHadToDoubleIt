@@ -1,7 +1,7 @@
 {
   "name": "youknowihadtodoubleit.com",
   "version": "0.1.0",
-  "homepage": "https://youknowihadtodoubleit.com",
+  "homepage": "https://youknowihadtodoubleit.com/#",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -14,7 +14,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "CI= npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",

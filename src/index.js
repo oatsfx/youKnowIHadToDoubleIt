@@ -5,18 +5,24 @@ import App from './App';
 import Calculator from './Calculator';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+
+import { Routes, Route, HashRouter, Link } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <>
+    <HashRouter>
+      <div className="navbar">
+        <Link to={'/'}><div className="button"><h2>Home</h2></div></Link>
+        <Link to={'/calculator/'}><div className="button"><h2>Calculator</h2></div></Link>
+      </div>
       <Routes>
         <Route path="" element={<App />} />
-        <Route path="/calculator" element={<Calculator />} />
+        <Route path="/calculator/" element={<Calculator />} />
       </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+    </HashRouter>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
