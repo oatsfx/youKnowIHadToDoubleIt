@@ -13,7 +13,7 @@ const stringIndex = Math.floor(Math.random() * flavorTexts.length);
 function App(){
   const [double, setDouble] = useState(0);
 
-  document.title = `you know i had to double it`;
+  document.title = `double calculator`;
 
   const doubleIt = async () => {
     setDouble(double + 1);
