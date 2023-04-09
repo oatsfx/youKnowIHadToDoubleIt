@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
+
 import App from './App';
 import Calculator from './Calculator';
-import reportWebVitals from './reportWebVitals';
+import GameBoard2048 from './GameBoard2048';
 
 import './App.css';
 
@@ -25,6 +27,7 @@ root.render(
       <div className="navbar">
         <Link to={'/'}><div className="button"><h2>Home</h2></div></Link>
         <Link to={'/calculator/'}><div className="button"><h2>Calculator</h2></div></Link>
+        <Link to={'/2048/'}><div className="button"><h2>2048</h2></div></Link>
       </div>
       <div className="head">
         <h1>youknowihadtodoubleit.com</h1>
@@ -33,6 +36,7 @@ root.render(
       <Routes>
         <Route path="" element={<App />} />
         <Route path="/calculator/" element={<Calculator />} />
+        <Route path="/2048/" element={<GameBoard2048 />} />
       </Routes>
     </HashRouter>
   </>
