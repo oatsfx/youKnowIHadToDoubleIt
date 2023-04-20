@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import Calculator from './Calculator';
 import GameBoard2048 from './GameBoard2048';
+import Memory from './Memory';
 
 import './App.css';
 
@@ -28,6 +29,7 @@ root.render(
         <Link to={'/'}><div className="button"><h2>Home</h2></div></Link>
         <Link to={'/calculator/'}><div className="button"><h2>Calculator</h2></div></Link>
         <Link to={'/2048/'}><div className="button"><h2>2048</h2></div></Link>
+        <Link to={'/memory/'}><div className="button"><h2>Memory</h2></div></Link>
       </div>
       <div className="head">
         <h1>youknowihadtodoubleit.com</h1>
@@ -37,6 +39,7 @@ root.render(
         <Route path="" element={<App />} />
         <Route path="/calculator/" element={<Calculator />} />
         <Route path="/2048/" element={<GameBoard2048 />} />
+        <Route path="/memory/" element={<Memory />} />
       </Routes>
     </HashRouter>
   </>

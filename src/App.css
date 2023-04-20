@@ -7,6 +7,7 @@
 
   --main-color: #f2fffe;
   --active-color: #7dd8c0;
+  --inactive-color: #e4765b;
 }
 
 * {
@@ -37,6 +38,7 @@ html{
 
 .comic-sans{
   font-family: Comic Sans;
+  transition: all 0.15s ease-in;
 }
 
 .double-container{
@@ -46,6 +48,11 @@ html{
 .active{
   color: var(--active-color);
   text-shadow: var(--active-color) 0px 0px 5px 0.5;
+}
+
+.inactive{
+  color: var(--inactive-color);
+  text-shadow: var(--inactive-color) 0px 0px 5px 0.5;
 }
 
 .head{
@@ -61,6 +68,7 @@ html{
 }
 
 .body{
+  width: 70%;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -92,12 +100,20 @@ a:active {
   color: var(--active-color);
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 65%;
+  margin: auto;
+}
+
 .button{
   height: 2.5rem;
   margin: auto;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   max-width: 12rem;
+  min-width: 5rem;
   display: flex;
   padding-left: 15px;
   padding-right: 15px;
@@ -117,6 +133,10 @@ a:active {
 .button h2, a{
   text-align: center;
   margin: auto;
+}
+
+.button h2 sup {
+  font-size: 18px;
 }
 
 .button:hover {
@@ -155,45 +175,4 @@ a:active {
 
   border: none;
   outline: none;
-}
-
-.board {
-  display: flex;
-  flex-wrap: wrap;
-  width: 20rem;
-  padding: 6px;
-  margin: 1rem auto;
-  justify-content: center;
-
-  outline: 2px solid #fff;
-  border-radius: 4px;
-}
-
-.game-tile{
-  background-color: #fff3;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 4px;
-  float: left;
-  margin: 6px 12px;
-  margin: 0.4rem;
-  
-  display: flex;
-  transition: all 0.3s cubic-bezier(0.275, 0.485, 0, 1);
-}
-
-.game-tile span{
-  font-size: 22px;
-  font-weight: 500;
-  margin: auto;
-
-  font-family: Comic Sans;
-
-  user-select: none;
-}
-
-.game-tile.empty{
-  background-color: #fff1;
-  z-index: 0;
-  position: relative;
 }
