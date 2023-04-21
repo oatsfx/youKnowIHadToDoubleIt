@@ -45,6 +45,8 @@ function App(){
           <h1 className="comic-sans">{value === '' ? "enter a number" : (value * 2).toLocaleString()}</h1>
         </div>
         {value === '' ? <></> : <p>because that's <b>{(value * 1).toLocaleString("en-US")}</b> doubled</p>}
+        <br></br>
+        {Number.isInteger(Math.log2(value)) ? <p>fun fact: <b>{(value * 1).toLocaleString("en-US")}</b> is a power of <b>2</b>... which makes <b>{(value * 2).toLocaleString("en-US")}</b>, also a power of <b>2</b></p> : <></>}
       </div>
     </div>
   );
