@@ -1,14 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+import doubleItUrl from './sounds/doubleit.mp3';
+
+const useAudio = () => {
+  const [audio] = useState(new Audio(doubleItUrl));
+  const [playing, setPlaying] = useState(false);
+
+  const toggle = () => !playing ? setPlaying(!playing) : setPlaying(playing);
+
+  useEffect(() => {
+      playing ? audio.play() : audio.pause(); audio.currentTime = 0;
+    },
+    [playing]
+  );
+
+  useEffect(() => {
+    audio.volume = 0.3;
+    audio.addEventListener('ended', () => setPlaying(false));
+    return () => {
+      audio.removeEventListener('ended', () => setPlaying(false));
+    };
+  }, []);
+
+  return [playing, toggle];
+};
+
 function App(){
   const [double, setDouble] = useState(0);
+
+  const [playing, toggle] = useAudio();
 
   document.title = `you know i had to double it`;
 
   const doubleIt = async () => {
     setDouble(double + 1);
     document.getElementById("double-text").classList.add('active');
+    toggle();
     await timeout(150);
     document.getElementById("double-text").classList.remove('active');
   }

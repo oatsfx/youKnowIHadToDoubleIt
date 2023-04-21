@@ -16,7 +16,10 @@ const flavorTexts = [
   "based on the coping mechanism: double it and give it to the next person",
   "you know i had to double ittttt",
   "created from non-smelly code",
-  "balls are sore yeah"
+  "balls are sore yeah",
+  "created with the power of a 30-day scrum sprint",
+  "it's joever",
+  "we're so back"
 ];
 
 const stringIndex = Math.floor(Math.random() * flavorTexts.length);

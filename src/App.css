@@ -41,10 +41,6 @@ html{
   transition: all 0.15s ease-in;
 }
 
-.double-container{
-  transition: all 0.15s ease-in;
-}
-
 .active{
   color: var(--active-color);
   text-shadow: var(--active-color) 0px 0px 5px 0.5;
