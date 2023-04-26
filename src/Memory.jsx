@@ -62,7 +62,7 @@ function App(){
   document.title = `do you know your powers of 2?`;
 
   const handleChoice = async (index) => {
-    if (index == answer){
+    if (index === answer){
       document.getElementById("result-display").innerHTML = "correct.";
       document.getElementById("result-display").classList.add('active');
       document.getElementById("number-display").classList.add('active');

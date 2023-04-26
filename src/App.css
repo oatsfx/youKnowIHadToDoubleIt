@@ -167,7 +167,7 @@ a:active {
   font-size: 18px;
 }
 
-.button:hover {
+.button:hover, .memory-button:hover {
   outline: 3px solid #fff;
   outline-offset: 2px;
   background-color: #fff4;
