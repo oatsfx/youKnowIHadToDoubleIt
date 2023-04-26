@@ -19,7 +19,10 @@ const flavorTexts = [
   "balls are sore yeah",
   "created with the power of a 30-day scrum sprint",
   "it's joever",
-  "we're so back"
+  "we're so back",
+  "let's fxxking joe",
+  "you're being charged with second-degree shaboingery",
+  "you've been corolla'd"
 ];
 
 const stringIndex = Math.floor(Math.random() * flavorTexts.length);

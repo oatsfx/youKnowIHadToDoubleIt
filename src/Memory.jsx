@@ -34,6 +34,31 @@ function App(){
   const [correctPlaying, correctToggle] = useAudio(correctUrl);
   const [incorrectPlaying, incorrectToggle] = useAudio(incorrectUrl);
 
+  const difficulties = [
+    {
+      name: "Easy",
+      answerChoices: 3,
+      highestPower: 8,
+    },
+    {
+      name: "Medium",
+      answerChoices: 4,
+      highestPower: 12,
+    },
+    {
+      name: "Hard",
+      answerChoices: 5,
+      highestPower: 16,
+    },
+    {
+      name: "You Know I Had To Double It",
+      answerChoices: 10,
+      highestPower: 32,
+    }
+  ]
+
+  let difficulty = 0;
+
   document.title = `do you know your powers of 2?`;
 
   const handleChoice = async (index) => {
@@ -60,14 +85,19 @@ function App(){
     await loadGame();
   }
 
+  const handleDifficultyChange = async (event) => {
+    difficulty = event.target.value;
+    loadGame();
+  }
+
   const loadGame = async () => {
     let newChoices = [];
-    while (newChoices.length < 5){
-      let random = Math.floor(Math.random() * 14);
+    while (newChoices.length < difficulties[difficulty].answerChoices){
+      let random = Math.floor(Math.random() * difficulties[difficulty].highestPower);
       if (!newChoices.includes(random))
         newChoices[newChoices.length] = random;
     }
-    setAnswer(Math.floor(Math.random() * 5));
+    setAnswer(Math.floor(Math.random() * difficulties[difficulty].answerChoices));
     setChoices(newChoices);
   }
 
@@ -83,6 +113,14 @@ function App(){
     <div className="app">
       <div className="body">
         <p>the powers of two, the number, not like a couple</p>
+        <select onChange={e => handleDifficultyChange(e)} defaultValue={0}>
+          <option disabled="true">Select a Difficulty</option>
+          {
+            difficulties.map((difficulty, index) => (
+              <option value={index} key={index}>{difficulty.name}</option>
+            ))
+          }
+        </select>
         <h1 className="comic-sans" id="number-display">{Math.pow(2, choices[answer]).toLocaleString("en-US")}</h1>
         <div class="button-container">
           {

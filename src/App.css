@@ -68,6 +68,8 @@ html{
   align-items: center;
   text-align: center;
   justify-content: center;
+  justify-items: center;
+  align-content: center;
 }
 
 .navbar {
@@ -99,15 +101,15 @@ a:active {
 .button-container {
   display: flex;
   justify-content: center;
-  width: 65%;
+  align-content: center;
   margin: auto;
+
+  width: 75%;
 }
 
 .button{
   height: 2.5rem;
-  margin: auto;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin: 0.75rem;
   max-width: 12rem;
   min-width: 5rem;
   display: flex;
@@ -171,6 +173,27 @@ a:active {
 
   border: none;
   outline: none;
+}
+
+select {
+  flex: 1;
+  background: #1f2123;
+  outline: 1px solid #fff5;
+  color: #f2fffe;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0.75rem auto;
+  padding: 0.5rem 1rem;
+
+  max-width: 15rem;
+
+  text-align: center;
+
+  transition: all 0.2s cubic-bezier(0.275, 0.485, 0, 1);
+}
+
+select:hover{
+  outline: 3px solid #fff;
 }
 
 .board {
