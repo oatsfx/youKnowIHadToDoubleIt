@@ -27,6 +27,8 @@ const useAudio = (url) => {
   return [playing, toggle];
 };
 
+let difficulty = 0;
+
 function App(){
   const [choices, setChoices] = useState([]);
   const [answer, setAnswer] = useState(0);
@@ -56,8 +58,6 @@ function App(){
       highestPower: 32,
     }
   ]
-
-  let difficulty = 0;
 
   document.title = `do you know your powers of 2?`;
 
@@ -125,7 +125,7 @@ function App(){
         <div class="button-container">
           {
             choices.map((choice, index) => (
-              <div className="button" key={index} onClick={() => handleChoice(index)}>
+              <div className="memory-button" key={index} onClick={() => handleChoice(index)}>
                 <h2>2<sup>{choice}</sup></h2>
               </div>
             ))
