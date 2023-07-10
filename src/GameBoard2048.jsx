@@ -321,23 +321,25 @@ const GameBoard2048 = () => {
   }
 
   return (
-    <>
-      <h3 style={{textAlign: "center"}}>no animations head ass</h3>
-      <h3 style={{textAlign: "center"}}>this definitely doesn't work right</h3>
-      <p style={{textAlign: "center"}}>Why are there 2 boards? <em>Because you know we hadda double itttttt</em></p>
-      {gameOver === true ? <h1>GAME OVER!</h1> : <></>}
-      <div className="board">
-        {board1.map((tile, index) => (
-          <Tile key={index} value={tile} index={index} />
-        ))}
-      </div>
-      <div className="board">
-        {board2.map((tile, index) => (
-          <Tile key={index} value={tile} index={index} />
-        ))}
-      </div>
-      <div className="button" onClick={(e) => resetBoards()}>Reset</div>
-    </>
+    <div className="main">
+      <>
+        <h3 style={{textAlign: "center"}}>no animations head ass</h3>
+        <h3 style={{textAlign: "center"}}>this definitely doesn't work right</h3>
+        <p style={{textAlign: "center"}}>Why are there 2 boards? <em>Because you know we hadda double itttttt</em></p>
+        {gameOver === true ? <h1>GAME OVER!</h1> : <></>}
+        <div className="board">
+          {board1.map((tile, index) => (
+            <Tile key={index} value={tile} index={index} />
+          ))}
+        </div>
+        <div className="board">
+          {board2.map((tile, index) => (
+            <Tile key={index} value={tile} index={index} />
+          ))}
+        </div>
+        <div className="button" onClick={(e) => resetBoards()}>Reset</div>
+      </>
+    </div>
     
   );
 };

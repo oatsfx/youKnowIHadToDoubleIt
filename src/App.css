@@ -8,6 +8,12 @@
   --main-color: #f2fffe;
   --active-color: #7dd8c0;
   --inactive-color: #e4765b;
+
+  --ice-blue: #97f9f9;
+  --uranian-blue: #a4def9;
+  --columbia-blue: #c1e0f7;
+  --thistle: #cfbae1;
+  --lilac: #c59fc9;
 }
 
 * {
@@ -26,14 +32,52 @@ html{
 }
 
 .app {
+  display: flex;
+  min-height: calc(100vh - 1.9rem - 7.5rem - 7.5rem);
+}
+
+.main {
   padding: 1rem;
+  margin: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 80%;
 
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.gradient-spin {
+  animation: 2s rotate linear infinite;
+}
+
+.gradient-spin:hover {
+  background-image: conic-gradient(
+    from var(--angle) at 0% 0%,
+    var(--ice-blue),
+    var(--uranian-blue),
+    var(--columbia-blue),
+    var(--thistle),
+    var(--lilac),
+    var(--ice-blue)
+  );
   
-  align-items: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate{
+  to{
+    --angle: 360deg;
+  }
 }
 
 .comic-sans{
@@ -52,11 +96,79 @@ html{
 }
 
 .head{
-  margin-bottom: 1.5rem;
-  margin-top: 2rem;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 4rem;
+  outline: 1px solid #fff2;
+  box-shadow: 0px 5px 6px #0008;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #141414;
+
+  justify-content: flex-start;
+}
+
+.head h1{
+  
+}
+
+.head em{
+  padding-left: 1.5rem;
+}
+
+.clickable-text {
+  cursor: pointer;
+  user-select: none;
+}
+
+.foot{
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 4rem;
+  outline: 1px solid #fff2;
+  box-shadow: 0px 5px 6px #0008;
+  z-index: 1;
+  background-color: #141414;
+}
+
+.foot a { 
+  transition: all 0.1s ease-in;
+}
+
+aside{
+  display: block;
+  justify-content: left;
+  width: 12rem;
+  border-right: 1px solid #fff2;
+  box-shadow: 5px 0px 6px #0008;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  position: sticky;
+  z-index: 0;
+  background-color: #141414;
+  flex-shrink: 0;
+}
+
+.side-container{
+  display: block;
+}
+
+.side-container p{
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.side-container div {
+  border-bottom: 1px solid #fff2;
+  transition: all 0.15s ease-in;
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+.side-container div:hover {
+  background-color: #fff1;
 }
 
 .head em{
@@ -88,7 +200,7 @@ a:visited {
 
 a:hover {
   text-decoration: none;
-  color: var(--main-color);
+  color: var(--lilac);
 }
 
 a:active {
@@ -98,11 +210,9 @@ a:active {
 
 .button-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  margin: auto;
-
-  width: 75%;
 }
 
 .memory-button{
@@ -126,7 +236,7 @@ a:active {
   transition: all 0.2s cubic-bezier(0.275, 0.485, 0, 1);
 }
 
-.memory-button h2, a{
+.memory-button h2, .memory-button a{
   text-align: center;
   margin: auto;
 }
@@ -136,15 +246,14 @@ a:active {
 }
 
 .button{
-  height: 2.5rem;
+  width:fit-content;
+  height:fit-content;
   margin: auto;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-  max-width: 12rem;
   min-width: 5rem;
-  display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
+ 
+  padding: 8px 15px 8px 15px;
   
   overflow: hidden;
   outline: 1px solid #fff5;
@@ -158,7 +267,11 @@ a:active {
   transition: all 0.2s cubic-bezier(0.275, 0.485, 0, 1);
 }
 
-.button h2, a{
+.button:active{
+  color: var(--active-color);
+}
+
+.button h2, .button a{
   text-align: center;
   margin: auto;
 }
@@ -217,7 +330,6 @@ select {
 
   max-width: 15rem;
 
-  text-align: center;
 
   transition: all 0.2s cubic-bezier(0.275, 0.485, 0, 1);
 }

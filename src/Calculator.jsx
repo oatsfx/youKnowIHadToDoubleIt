@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-
-
-function App(){
+function Calculator() {
   const [value, setValue] = useState('');
 
   document.title = `double calculator`;
@@ -14,24 +12,24 @@ function App(){
     // if value is not blank, then test the regex
     let value = e.target.value;
     if (value === '' || re.test(value)) {
-      if (!isNaN(2 * value)){
+      if (!isNaN(2 * value)) {
         setValue(value);
         document.getElementById("double-text").classList.add('active');
         await timeout(150);
-        document.getElementById("double-text").classList.remove('active');  
+        document.getElementById("double-text").classList.remove('active');
       }
     }
   }
 
   function timeout(delay) {
-    return new Promise( res => setTimeout(res, delay) );
-}
+    return new Promise(res => setTimeout(res, delay));
+  }
 
   return (
-    <div className="app">
+    <div className="main">
       <div className="body">
         <div className="search">
-          <input 
+          <input
             placeholder="Number"
             pattern="[0-9]*"
             id="value"
@@ -52,4 +50,4 @@ function App(){
   );
 }
 
-export default App;
+export default Calculator;

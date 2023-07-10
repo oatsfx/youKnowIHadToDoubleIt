@@ -29,9 +29,12 @@ const useAudio = (url) => {
 
 let difficulty = 0;
 
-function App(){
+function Memory(){
   const [choices, setChoices] = useState([]);
   const [answer, setAnswer] = useState(0);
+
+  const [right, setRight] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const [correctPlaying, correctToggle] = useAudio(correctUrl);
   const [incorrectPlaying, incorrectToggle] = useAudio(incorrectUrl);
@@ -67,7 +70,7 @@ function App(){
       document.getElementById("result-display").classList.add('active');
       document.getElementById("number-display").classList.add('active');
       correctToggle();
-      await timeout(150);
+      setRight((prev) => prev + 1);
       document.getElementById("number-display").classList.remove('active');
     }
     else{
@@ -75,9 +78,9 @@ function App(){
       document.getElementById("result-display").classList.add('inactive');
       document.getElementById("number-display").classList.add('inactive');
       incorrectToggle();
-      await timeout(150);
       document.getElementById("number-display").classList.remove('inactive');
     }
+    setTotal((prev) => prev + 1);
     await timeout(1000);
     document.getElementById("result-display").classList.remove('active');
     document.getElementById("result-display").classList.remove('inactive');
@@ -87,6 +90,8 @@ function App(){
 
   const handleDifficultyChange = async (event) => {
     difficulty = event.target.value;
+    setRight(0);
+    setTotal(0);
     loadGame();
   }
 
@@ -110,7 +115,7 @@ function App(){
   }, []);
 
   return (
-    <div className="app">
+    <div className="main">
       <div className="body">
         <p>the powers of two, the number, not like a couple</p>
         <select onChange={e => handleDifficultyChange(e)} defaultValue={0}>
@@ -131,11 +136,11 @@ function App(){
             ))
           }
         </div>
+        <h3>Score: {right}/{total}</h3>
         <h2 className="comic-sans" id="result-display"></h2>
-        
       </div>
     </div>
   );
 }
 
-export default App;
+export default Memory;

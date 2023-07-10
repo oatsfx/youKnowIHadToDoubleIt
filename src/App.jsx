@@ -43,12 +43,12 @@ function App(){
 
   function timeout(delay) {
     return new Promise( res => setTimeout(res, delay) );
-}
+  }
 
   return (
-    <div className="app">
+    <div className="main">
       <div className="body">
-        <p>doubled <b>{double}</b> times for a total of <b>{Math.pow(2, double)}</b></p>
+        <p>doubled <b>{double.toLocaleString()}</b> times for a total of <b>{Math.pow(2, double).toLocaleString()}</b></p>
         {
           double > 10 ? <em>The website will start to lag. If you can load the site still, congrats.</em> : <></>
         }
