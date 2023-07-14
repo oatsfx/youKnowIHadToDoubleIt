@@ -12,7 +12,13 @@ function FunFacts() {
     "the element with the atomic number of 2 is Helium",
     "2 follows 1 and precedes 3",
     "the 2nd ever state of the USA is Pennsylvania",
-    "if a number is divisible by 2, it denotes that it is even"
+    "if a number is divisible by 2, it denotes that it is even",
+    "the 2nd letter of 'Pterodactyl' is 't'. 2 also starts with 't'",
+    "the 2nd song on The Beatles' Abbey Road album is 'Something'",
+    "2 times 2 is 4, and so is 2 to the power of 2... and 2 plus 2",
+    "[REDACTED]",
+    "there are 2 Hydrogen atoms in a water molecule",
+    "the 2nd valence electron shell can hold 2*2*2 (8) electrons"
   ];
 
   document.title = `fun facts about the number 2`;

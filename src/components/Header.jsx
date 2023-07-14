@@ -2,6 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, HashRouter, Link } from "react-router-dom";
 import '../App.css';
 
+import { Tooltip } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+const StyledTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} disableInteractive />
+))`
+  & .MuiTooltip-tooltip {
+    color: #f2fffe;
+    font-family: var(--font-display);
+    letter-spacing: 0.25px;
+    outline: 2px solid #fff5;
+    background: #0005;
+    text-align: center;
+    text-shadow: 0px 2px 2px #000;
+  }
+`;
+
 function Header() {
   const [value, setValue] = useState('');
 
@@ -42,8 +59,14 @@ function Header() {
 
   return (
     <header className="head">
-      <Link to={'/'}><h1><span className="gradient-spin">youknowihadtodoubleit.com</span></h1></Link>
-      <em><span className="clickable-text" onClick={changeIndex}>{flavorTexts[flavorIndex]}</span></em>
+      <h1><span className="gradient-spin"><Link to={'/'}>youknowihadtodoubleit.com</Link></span></h1>
+      <em>
+        <StyledTooltip title={"Click to change text."} placement="right">
+          <span className="clickable-text" onClick={changeIndex}>{flavorTexts[flavorIndex]}</span>
+        </StyledTooltip>
+      </em>
+      
+      
     </header>
   );
 }

@@ -281,7 +281,7 @@ a:active {
 }
 
 .button:hover, .memory-button:hover {
-  outline: 3px solid #fff;
+  outline: 2px solid #fff;
   outline-offset: 2px;
   background-color: #fff4;
   cursor: pointer;
@@ -300,7 +300,7 @@ a:active {
 }
 
 .search:hover {
-  outline: 3px solid #fff;
+  outline: 2px solid #fff;
 }
 
 .search input{
